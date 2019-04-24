@@ -1,0 +1,94 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Selected Fighter Details </title>
+  <link rel="stylesheet" href="phase2start.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script>
+  $(
+      function()
+    {
+        $("#u").click(function()
+        {
+          var h = "startpg.html";
+          console.log(h);
+          window.location.href = h;
+        })
+
+      var url = window.location.href;
+      var x = breakUpURLParameters(url);
+      var t = document.getElementById("effectDiv");
+      var y = document.createElement("img");
+      y.setAttribute("src", x.search.img);
+      y.setAttribute("class", "pctImg");
+      t.appendChild(y);
+
+
+      var z = document.createElement("p");
+      var hr = decodeURIComponent(x.search.caption);
+      var lr = decodeURIComponent(x.search.like);
+      z.innerHTML = decodeURIComponent(x.search.caption);
+      t.appendChild(z);
+
+      var ui = document.createElement("p");
+      ui.innerHTML = decodeURIComponent(x.search.description);
+      t.appendChild(ui);
+
+
+      likelink1 = "https://s3.us-east-2.amazonaws.com/real3110website/phase2/heart.jpg";
+      var like = document.createElement("img");
+      like.setAttribute("class", "pctImg");
+      like.setAttribute("src", likelink1);
+      if(hr == lr)
+      {
+        t.appendChild(like);
+      }
+      function breakUpURLParameters(url)
+      {
+          var link = document.createElement("a");
+          link.setAttribute("href", url);
+          return{
+              host:     link.hostname,
+              port:     link.port,
+              search:   mapMaker(link.search),
+              path:     link.pathname,
+              protocol: link.protocol
+          }
+      }
+
+      function mapMaker(search, preserveDuplicates)
+      {
+          preserveDuplicates = preserveDuplicates || false;
+          var outputNoDupes = {};
+          var returnableArray = [];
+          if(!search) throw new Error("Incorrect Values Found");
+          search = search.split("?")[1];
+          search = search.split("&");          returnableArray = search.map(function(keyval)
+          {
+           var out = {};
+           keyval = keyval.split("=");
+           out[keyval[0]] = keyval[1];
+           outputNoDupes[keyval[0]] = keyval[1];
+           return out;
+           }
+         )
+          return (preserveDuplicates) ? returnableArray : outputNoDupes;
+       }
+
+// working on this onload feature he showed in class, just need to check if x.search.caption is equal to x.search.like and then put picture if it is
+
+
+
+     }
+   )
+</script>
+</head>
+<body>
+  <div id="effectDiv" class="imgDiv">
+    <button id="u">Return to Fighter Selection</button>
+  </div>
+</body>
+<body onload = "check()">
+</body>
+</html>

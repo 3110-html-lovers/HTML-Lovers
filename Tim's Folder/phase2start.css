@@ -1,0 +1,67 @@
+.pctImg
+{
+  width: 99%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font: "Lucida Console";
+}
+
+.pctImg1
+{
+  //cant change because it changes the whole div siz
+  width: 10%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font: "Lucida Console";
+}
+
+.button
+{
+  width: 50%
+  height: 100px;
+  padding: 10px;
+}
+
+
+.imgDiv
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%
+  height: 300px;
+  padding: 10px;
+  font: "Lucida Console";
+}
+
+body
+{
+background-color: yellow;
+color: blue;
+font-family: verdana;
+font-size: 150%;
+display:grid;
+grid-gap: 4px;
+grid-template-columns: 33% 33% 33%;
+}
+
+
+.containMe
+{
+  display:grid;
+  grid-gap: 4px;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.txtDiv
+{
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font: "Lucida Console";
+}
