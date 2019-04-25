@@ -1,0 +1,322 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="phase5start.css">
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+//spinner,badge,button
+
+var pics = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg","6.jpg"];
+var captions = ["Asta","Yami","Noelle","Charmy","Luck","Magna"];
+var descriptions = ["Short but strong boy with no magical powers at all!",
+                    "Captain of the Black Bulls Squad!",
+                    "Silver haired royal who is learning to control her magic!",
+                    "Loves to eat and sleep more than anyone else!",
+                    "A crazy boy who loves nothing but fighting strong enemies!",
+                    "A crazy pyro head who has a mean baseball swing!"]
+console.log(pics);
+var link;
+var num = "";
+for(var i = 0; i < pics.length; i++)
+{
+  var krdg = document.cookie;
+  console.log("Image number: " + pics[i]);
+  link = "https://s3-us-east-2.amazonaws.com/real3110website/phase5/" + pics[i];
+
+  if(krdg == 1)
+  {
+    var npk = "Asta";
+  }
+  else if(krdg == 2)
+  {
+    var npk = "Yami";
+  }
+  else if(krdg == 3)
+  {
+      var npk = "Noelle";
+  }
+  else if(krdg == 4)
+  {
+      var npk = "Charmy";
+  }
+  else if(krdg == 5)
+  {
+      var npk = "Luck";
+  }
+  else if(krdg == 6)
+  {
+      var npk = "Magna";
+  }
+  else
+  {
+      var npk = "Not liked";
+  }
+
+
+  other = "detailpg1.html?" + "img=" + link + "&caption=" + captions[i] + "&description=" + descriptions[i] + "&like=" + npk;
+  likelink = "https://s3.us-east-2.amazonaws.com/real3110website/phase5/heart.jpg";
+  var uri = decodeURIComponent(other);
+  var picFrame = document.createElement("div");
+  picFrame.setAttribute("class", "imgDiv");
+  var actualPic = document.createElement("img");
+  actualPic.setAttribute("class", "pctImg");
+  actualPic.setAttribute("src", link);
+  var like = document.createElement("img");
+  like.setAttribute("class", "pctImg");
+  like.setAttribute("src", likelink);
+  var other2 = document.createElement("a");
+
+  var x = document.createElement("div");
+  x.setAttribute("class", "imgDiv");
+  cap = captions[i];
+  var onp = document.cookie;
+
+
+
+  var b = document.createElement("button");
+  b.setAttribute("class", "btn btn-primary");
+  b.innerHTML = "Favorite";
+  var f = document.createElement("button");
+  f.setAttribute("class", "btn btn-danger");
+  f.innerHTML = "Unfavorite";
+  var ba = document.createElement("button");
+  ba.setAttribute("class", "btn btn-primary");
+  ba.innerHTML = "Favorite";
+  var fa = document.createElement("button");
+  fa.setAttribute("class", "btn btn-danger");
+  fa.innerHTML = "Unfavorite";
+  var bb = document.createElement("button");
+  bb.setAttribute("class", "btn btn-primary");
+  bb.innerHTML = "Favorite";
+  var fb = document.createElement("button");
+  fb.setAttribute("class", "btn btn-danger");
+  fb.innerHTML = "Unfavorite";
+  var bc = document.createElement("button");
+  bc.setAttribute("class", "btn btn-primary");
+  bc.innerHTML = "Favorite";
+  var fc = document.createElement("button");
+  fc.setAttribute("class", "btn btn-danger");
+  fc.innerHTML = "Unfavorite";
+  var bd = document.createElement("button");
+  bd.setAttribute("class", "btn btn-primary");
+  bd.innerHTML = "Favorite";
+  var fd = document.createElement("button");
+  fd.setAttribute("class", "btn btn-danger");
+  fd.innerHTML = "Unfavorite";
+  var be = document.createElement("button");
+  be.setAttribute("class", "btn btn-primary");
+  be.innerHTML = "Favorite";
+  var fe = document.createElement("button");
+  fe.setAttribute("class", "btn btn-danger");
+  fe.innerHTML = "Unfavorite";
+
+
+
+  if(i == 0)
+  {
+    $(b).click(function(){
+        document.cookie = 1;
+        location.reload();
+      });
+      $(f).click(function(){
+        document.cookie = 7;
+        location.reload();
+      });
+  }
+  else if(i == 1)
+  {
+    $(ba).click(function(){
+        document.cookie = 2;
+        location.reload();
+    });
+    $(fa).click(function(){
+        document.cookie = 7;
+        location.reload();
+    });
+  }
+  else if(i == 2)
+  {
+    $(bb).click(function(){
+        document.cookie = 3;
+        location.reload();
+    });
+    $(fb).click(function(){
+        document.cookie = 7;
+        location.reload();
+    });
+  }
+  else if(i == 3)
+  {
+    $(bc).click(function(){
+        document.cookie = 4;
+        location.reload();
+    });
+    $(fc).click(function(){
+        document.cookie = 7;
+        location.reload();
+    });
+  }
+  else if(i == 4)
+  {
+    $(bd).click(function(){
+        document.cookie = 5;
+        location.reload();
+    });
+    $(fd).click(function(){
+        document.cookie = 7;
+        location.reload();
+    });
+  }
+  else
+  {
+    $(be).click(function(){
+        document.cookie = 6;
+        location.reload();
+        var npk = "Magna";
+    });
+    $(fe).click(function(){
+        document.cookie = 7;
+        location.reload();
+    });
+  }
+
+
+
+
+
+  var t = document.createTextNode(cap);
+  x.appendChild(t);
+  picFrame.appendChild(x);
+
+  other2.setAttribute("href", uri);
+  other2.appendChild(actualPic);
+  picFrame.appendChild(other2);
+  document.body.appendChild(picFrame);
+  if(i == 0)
+  {
+    if(onp == 1)
+    {
+      picFrame.appendChild(like);
+      picFrame.appendChild(f);
+    }
+    else
+    {
+      picFrame.appendChild(b);
+      picFrame.appendChild(f);
+    }
+  }
+  else if(i == 1)
+  {
+    if(onp == 2)
+    {
+      picFrame.appendChild(like);
+      picFrame.appendChild(fa);
+    }
+    else
+    {
+      picFrame.appendChild(ba);
+      picFrame.appendChild(fa);
+    }
+  }
+  else if(i == 2)
+  {
+    if(onp == 3)
+    {
+      picFrame.appendChild(like);
+      picFrame.appendChild(fb);
+    }
+    else
+    {
+      picFrame.appendChild(bb);
+      picFrame.appendChild(fb);
+    }
+  }
+  else if(i == 3)
+  {
+    if(onp == 4)
+    {
+      picFrame.appendChild(like);
+      picFrame.appendChild(fc);
+    }
+    else
+    {
+      picFrame.appendChild(bc);
+      picFrame.appendChild(fc);
+    }
+  }
+  else if(i == 4)
+  {
+    if(onp == 5)
+    {
+      picFrame.appendChild(like);
+      picFrame.appendChild(fd);
+    }
+    else
+    {
+      picFrame.appendChild(bd);
+      picFrame.appendChild(fd);
+    }
+  }
+  else
+  {
+    if(onp == 6)
+    {
+      picFrame.appendChild(like);
+      picFrame.appendChild(fe);
+    }
+    else
+    {
+      picFrame.appendChild(be);
+      picFrame.appendChild(fe);
+    }
+  }
+
+}
+
+
+
+</script>
+
+<div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<span class="badge badge-pill badge-info">Pick Your Fighter!</span>
+<div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div><div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div><div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div><div class="text-center">
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+</body>
+</html>
