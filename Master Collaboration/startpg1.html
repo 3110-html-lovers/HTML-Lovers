@@ -2,6 +2,27 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="phase5start.css">
+
+  <h1>
+    <p1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page">Gallery</li>
+        <li class="breadcrumb-item"><a href=urlOfDetailPage>Detail Page</a></li>
+
+      </ol>
+    </nav>
+  </p1>
+  </h1>
+  <link rel="stylesheet" href="gallcss.css">
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Welcome to the page!</h1>
+        <p class="lead">Here you will find pictures with captions for my favorite anime.</p>
+      </div>
+    </div>
 </head>
 
 <body>
@@ -69,8 +90,8 @@ for(var i = 0; i < pics.length; i++)
   like.setAttribute("src", likelink);
   var other2 = document.createElement("a");
 
-  var x = document.createElement("div");
-  x.setAttribute("class", "imgDiv");
+  var x = document.createElement("card");
+  x.setAttribute("class", "card-body");
   cap = captions[i];
   var onp = document.cookie;
 
