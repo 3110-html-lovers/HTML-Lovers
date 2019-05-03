@@ -4,3 +4,6 @@ https://s3-us-west-2.amazonaws.com/newbucket311/Phase+7/main.html
 https://s3.us-east-2.amazonaws.com/real3110website/Phase+7/YourAccount.html
 https://s3.us-east-2.amazonaws.com/real3110website/Phase+7/CreateAccount.html
 https://s3.us-east-2.amazonaws.com/real3110website/Phase+7/Gallery.html
+https://s3-us-west-2.amazonaws.com/alexbucket3110/phase7/contactpage.html
+https://s3-us-west-2.amazonaws.com/alexbucket3110/phase7/loginpage.html
+https://s3-us-west-2.amazonaws.com/alexbucket3110/phase7/reviewpage.html
