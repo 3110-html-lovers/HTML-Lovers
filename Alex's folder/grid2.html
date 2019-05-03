@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+
+  <div class="alert alert-danger fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> Indicates a successful or positive action.
+  </div>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="go1.css">
+</head>
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+<script>
+var pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg","6.jpg"];
+var captions = ["Kendrick Lamar","SchoolboyQ","Jay Rock","Ab Soul","SZA","Isaiah Rashad"];
+var descriptions = ["Grammy award winning rap artist. Signed to the record label TDE.",  "Hoover Crip turned grammy nominated rap artist. Signed to TDE","First member to be signed to TDE.",
+                  "Born in Watts, CA. Known for his amazingly confusing lyrics!","Grammy award winning singer, signed to TDE and has written for Beyonce.","From Chattanooga, TN. Signed to TDE."]
+console.log(pictures);
+var link;
+var num = "";
+for(var i = 0; i < pictures.length; i++)
+{
+var cookiesssss = document.cookie;
+link = "https://s3-us-west-2.amazonaws.com/alexbucket3110/Phase2mine/" + pictures[i];
+if(cookiesssss == 1)
+{
+  var picName = "Kendrick Lamar";
+}
+else if(cookiesssss == 2)
+{
+  var picName = "SchoolboyQ";
+}
+else if(cookiesssss == 3)
+{
+    var picName = "Jay Rock";
+}
+else if(cookiesssss == 4)
+{
+    var picName = "Ab Soul";
+}
+else if(cookiesssss == 5)
+{
+    var picName = "SZA";
+}
+else if(cookiesssss == 6)
+{
+    var picName = "Isaiah Rashad";
+}
+else
+{
+    var picName = "Not liked";
+}
+
+
+other = "detailpg1.html?" + "img=" + link + "&caption=" + captions[i] + "&description=" + descriptions[i] + "&heart=" + picName;
+otherother = "https://s3-us-west-2.amazonaws.com/alexbucket3110/Phase2mine/heart.jpg";
+var uri = decodeURIComponent(other);
+var frame = document.createElement("div");
+frame.setAttribute("class", "imgDiv");
+var actualPic = document.createElement("img");
+actualPic.setAttribute("class", "pctImg");
+actualPic.setAttribute("src", link);
+var heart = document.createElement("img");
+heart.setAttribute("class", "pctImg");
+heart.setAttribute("src", otherother);
+var other2 = document.createElement("a");
+
+var x = document.createElement("div");
+x.setAttribute("class", "imgDiv");
+cap = captions[i];
+var anotherCookieName = document.cookie;
+
+
+
+var b = document.createElement("button");
+b.setAttribute("class", "button");
+b.innerHTML = "Favorite";
+var f = document.createElement("button");
+f.setAttribute("class", "button");
+f.innerHTML = "Unfavorite";
+var ba = document.createElement("button");
+ba.setAttribute("class", "button");
+ba.innerHTML = "Favorite";
+var fa = document.createElement("button");
+fa.setAttribute("class", "button");
+fa.innerHTML = "Unfavorite";
+var bb = document.createElement("button");
+bb.setAttribute("class", "button");
+bb.innerHTML = "Favorite";
+var fb = document.createElement("button");
+fb.setAttribute("class", "button");
+fb.innerHTML = "Unfavorite";
+var bc = document.createElement("button");
+bc.setAttribute("class", "button");
+bc.innerHTML = "Favorite";
+var fc = document.createElement("button");
+fc.setAttribute("class", "button");
+fc.innerHTML = "Unfavorite";
+var bd = document.createElement("button");
+bd.setAttribute("class", "button");
+bd.innerHTML = "Favorite";
+var fd = document.createElement("button");
+fd.setAttribute("class", "button");
+fd.innerHTML = "Unfavorite";
+var be = document.createElement("button");
+be.setAttribute("class", "button");
+be.innerHTML = "Favorite";
+var fe = document.createElement("button");
+fe.setAttribute("class", "button");
+fe.innerHTML = "Unfavorite";
+
+
+
+if(i == 0)
+{
+  $(b).click(function(){
+      document.cookie = 1;
+      location.reload();
+    });
+    $(f).click(function(){
+      document.cookie = 7;
+      location.reload();
+    });
+}
+else if(i == 1)
+{
+  $(ba).click(function(){
+      document.cookie = 2;
+      location.reload();
+  });
+  $(fa).click(function(){
+      document.cookie = 7;
+      location.reload();
+  });
+}
+else if(i == 2)
+{
+  $(bb).click(function(){
+      document.cookie = 3;
+      location.reload();
+  });
+  $(fb).click(function(){
+      document.cookie = 7;
+      location.reload();
+  });
+}
+else if(i == 3)
+{
+  $(bc).click(function(){
+      document.cookie = 4;
+      location.reload();
+  });
+  $(fc).click(function(){
+      document.cookie = 7;
+      location.reload();
+  });
+}
+else if(i == 4)
+{
+  $(bd).click(function(){
+      document.cookie = 5;
+      location.reload();
+  });
+  $(fd).click(function(){
+      document.cookie = 7;
+      location.reload();
+  });
+}
+else
+{
+  $(be).click(function(){
+      document.cookie = 6;
+      location.reload();
+      var picName = "Magna";
+  });
+  $(fe).click(function(){
+      document.cookie = 7;
+      location.reload();
+  });
+}
+
+
+
+
+
+var t = document.createTextNode(cap);
+x.appendChild(t);
+frame.appendChild(x);
+
+other2.setAttribute("href", uri);
+other2.appendChild(actualPic);
+frame.appendChild(other2);
+document.body.appendChild(frame);
+if(i == 0){
+  if(anotherCookieName == 1){
+    frame.appendChild(heart);
+    frame.appendChild(f);
+  }
+  else{
+    frame.appendChild(b);
+    frame.appendChild(f);
+  }}
+else if(i == 1){
+  if(anotherCookieName == 2){
+    frame.appendChild(heart);
+    frame.appendChild(fa);
+  }
+  else{
+    frame.appendChild(ba);
+    frame.appendChild(fa);
+  }}
+else if(i == 2){
+  if(anotherCookieName == 3){
+    frame.appendChild(heart);
+    frame.appendChild(fb);
+  }
+  else{
+    frame.appendChild(bb);
+    frame.appendChild(fb);
+  }}
+else if(i == 3)
+{
+  if(anotherCookieName == 4){
+    frame.appendChild(heart);
+    frame.appendChild(fc);
+  }
+  else{
+    frame.appendChild(bc);
+    frame.appendChild(fc);
+  }}
+else if(i == 4){
+  if(anotherCookieName == 5){
+    frame.appendChild(heart);
+    frame.appendChild(fd);
+  }
+  else{
+    frame.appendChild(bd);
+    frame.appendChild(fd);
+  }}
+else{
+  if(anotherCookieName == 6){
+    frame.appendChild(heart);
+    frame.appendChild(fe);
+  }
+  else{
+    frame.appendChild(be);
+    frame.appendChild(fe);
+  }}}
+
+
+</script>
+
+</body>
+
+<div class="container">
+  <h2>Pssst click me...</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">secrets...</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">close me</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Wow look how well this code works!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</html>
