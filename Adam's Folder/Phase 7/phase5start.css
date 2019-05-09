@@ -72,7 +72,7 @@ ol.breadcrumb {
   background-color: #eee;
   position: absolute;
   top: 30%;
-  right: 20%;
+  right: 11%;
 }
 ol.breadcrumb li {
   display: inline;
@@ -145,6 +145,16 @@ color: black;
 
 .purchaseInput {
   color: black;
+}
+
+.email {
+  position: absolute;
+  top: 40%;
+  left: 37%;
+  color: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lead {
